@@ -1,6 +1,3 @@
-import java.awt.*;
-import java.awt.geom.Line2D;
-
 public class Vector2D {
     public double wspx, wspy;
 
@@ -24,48 +21,45 @@ public class Vector2D {
         this.wspy=wspy;
     }
 
-    public Vector2D(){
+    public Vector2D(){          //konstruktor domyslny
         setWspx(0);
         setWspy(0);
     }
 
-    public Vector2D(double x, double y){
+    public Vector2D(double x, double y){            //konstruktor z parametrami
         setWspx(x);
         setWspy(y);
     }
 
-    public Vector2D suma(Vector2D x){
+    public Vector2D suma(Vector2D x){           //metoda zwracająca sume wektora ktorego zostala wywolana i podanego za parametr
         double a=getWspx()+x.getWspx();
         double b=getWspy()+x.getWspy();
         return new Vector2D(a,b);
     }
-    public Vector2D roznica(Vector2D x){
+    public Vector2D roznica(Vector2D x){            //metoda zwracajaca roznice
         double a=getWspx()-x.getWspx();
         double b=getWspy()-x.getWspx();
         return new Vector2D(a,b);
     }
-    public Vector2D iloczyn(double n){
+    public Vector2D iloczyn(double n){          //metoda zwracajaca iloczyn
         double a=n*getWspx();
         double b=n*getWspy();
         return new Vector2D(a,b);
     }
 
-    public double dlugosc(){
+    public double dlugosc(){            //metoda zwracajaca dlugosc
         return Math.sqrt(getWspx()*getWspx()+getWspy()*getWspy());
     }
 
-    public Vector2D normal(){
+    public Vector2D normal(){           //metoda zwracajaca wektor znormalizowany
         double l=dlugosc();
         return iloczyn(1/l);
     }
 
-    public void info(){
+    public void info(){         //metoda wyswietlajaca informacje o wektorze w konsoli
         System.out.println("x: "+getWspx());
         System.out.println("y: "+getWspy());
     }
-
-
-
 
     public static void main (String[] args){
     }
